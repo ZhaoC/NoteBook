@@ -18,31 +18,33 @@ ______
     - [Hibernate](#java-hibernate)
     - [Design Pattern](#java-designpattern)
     - [Thread](#java-thread)
-______
 
-## Tomcat [⥣](#table-of-contents)
+## Tomcat 
 
-## BrowserWorkflow [⥣](#table-of-contents)
 
-## Tools [⥣](#table-of-contents)
+## BrowserWorkflow 
 
-#### Tools-Jenkins [⥣](#table-of-contents)
+
+## Tools 
+
+
+#### Tools-Jenkins 
     ```sh
-    #Run in standalone mode
-    $ java -jar jenkins.war --httpPort=9090 //default port is 8080
+        #Run in standalone mode
+        $ java -jar jenkins.war --httpPort=9090 //default port is 8080
     ```
 
-#### Tools-CURL [⥣](#table-of-contents)
+#### Tools-CURL 
     ```sh
-    #retrieve content from internet and save to a file
-    $ curl -o ubuntu.iso http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
+        #retrieve content from internet and save to a file
+        $ curl -o ubuntu.iso http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
     ```
 
 ##### CURL reference 
 * [comparison Table](https://curl.haxx.se/docs/comparison-table.html)
 * [Curl introduction](https://curl.haxx.se/docs/httpscripting.html)
 
-##### Tools-Heroku [⥣](#table-of-contents)
+##### Tools-Heroku 
 * command cheetsheet
     ```sh
         $: heroku create
@@ -60,11 +62,10 @@ ______
 ##### Heroku Reference
 * [heroku-postgresql](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-the-add-on)
 
-
-## Python [⥣](#table-of-contents)
+## Python 
     ```sh
-    #install pip
-    $ sudo easy_install pip
+        #install pip
+        $ sudo easy_install pip
     ```    
 
 #### PythonRelatedMaterials
@@ -72,19 +73,19 @@ ______
 * [Web Framework - Django](https://www.djangoproject.com/)
 * [Web Framework - Flask (Lightweight)](http://flask.pocoo.org/)
 
-#### Python-Flask [⥣](#table-of-contents)
+#### Python-Flask 
 * init a Flask Project 
     ```sh
-    # install Flask
-        $: mkdir FlaskAppDir
-        $: virtualenv venv #create virtual environment
-        $: source venv/bin/activate # activate venv
-        $: pip install Flask # install Flask in the venv
+        # install Flask
+            $: mkdir FlaskAppDir
+            $: virtualenv venv #create virtual environment
+            $: source venv/bin/activate # activate venv
+            $: pip install Flask # install Flask in the venv
     ```
 * Flask Project Workflow
     > `Bowser` --> `routes.py` --> `templates/` --> `static/` --> `routes.py` --> `Browser`
 
-## JavaScript [⥣](#table-of-contents)
+## JavaScript 
 #### Javascript-EventHandler 
 ```js
 //javascript event handler
@@ -117,8 +118,8 @@ document.getElement().addEventListener('click', function, false);
         myRequest.open('GET', 'file.txt', true);
         myRequest.send(null);
 ```
-
-#### Javascript-Promise [⥣](#table-of-contents)
+[⥣](#table-of-contents)
+#### Javascript-Promise 
 > JavaScript Promises provide a mechanism for traking the state of an asynchronous task with more robustness and less chaos. 
 
 > A Promise is a proxy for a value not neccessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual
@@ -128,7 +129,7 @@ method returns a promise to supply the value at some point in the future (Mozill
 * Promise Syntax
     ```js
         new Promise(/* executor */ function(resolve, reject){...});
-    ````
+    ```
 *  Promise states :
     * fulfilled - the action relating to the promise successed
     * rejected - the action relating to the promise failed
@@ -146,25 +147,26 @@ method returns a promise to supply the value at some point in the future (Mozill
 
 * how you create a promise
     ```js
-    var promise  = new Promise(function(resolve, reject){
-        // do a thing, possibly async, then...
-        if(/*everything turned out fine*/){
-            resolve("stuff worked!");
-        }
-        else{
-            reject(Error("it broke"));
-        }
-    })
+        var promise  = new Promise(function(resolve, reject){
+            // do a thing, possibly async, then...
+            if(/*everything turned out fine*/){
+                resolve("stuff worked!");
+            }
+            else{
+                reject(Error("it broke"));
+            }
+        })
     ```
 * how you use the promise
     ```js
-    promise.then(function(result){
-        console.log(result); // "Stuff worked!"
-    }, function(err){
-        console.log(err); //Error: "It broke"
-    });
+        promise.then(function(result){
+            console.log(result); // "Stuff worked!"
+        }, function(err){
+            console.log(err); //Error: "It broke"
+        });
     ```
 > then() takes two arguments,  callback for a success case, and another for the failure case. Both are optional, so you can add a callback for the success or failure case only.
+
 ##### JavaScript promise reference
 * [Promise Fundamentals 01](https://spring.io/understanding/javascript-promises) 
 * [Promise Fundamentals 02](http://www.javascriptkit.com/javatutors/javascriptpromises.shtml)
@@ -174,12 +176,11 @@ method returns a promise to supply the value at some point in the future (Mozill
 * [An implementation of Promise (github lib)](https://github.com/then/promise)
 * [An implementation of Promise - Lightweight (github lib)](https://github.com/stackp/promisejs)
 
-
-#### JavaScript-Concerns [⥣](#table-of-contents)
+#### JavaScript-Concerns 
 1. why JavaScript is not multi-threading >> because the Javascript interpreter in the browser is a single thread.
-2. What is callbakc hell and how to avoid it >> [Callbakc hell](http://callbackhell.com/)
+2. What is callbakc hell and how to avoid it >> [Callback hell](http://callbackhell.com/)
 
-#### JavaScript-ExtJS [⥣](#table-of-contents)
+#### JavaScript-ExtJS 
 * Code Conventions
     * Code Snippet 
         ```js 
@@ -231,7 +232,7 @@ method returns a promise to supply the value at some point in the future (Mozill
                     // 'launch' function is defined in Ext.app.Application. 
                     // This function is called after the page is loaded
                 }
-            })
+            });
         ```
      * View model - MainModel.js
         ```js
@@ -263,9 +264,8 @@ method returns a promise to supply the value at some point in the future (Mozill
                         //
                     }
                 }
-            })
+            });
         ```
-
 * Sencha Cmd
     * Cmd - build the application
         ```sh
@@ -285,7 +285,7 @@ method returns a promise to supply the value at some point in the future (Mozill
             sencha generate controller MyController
         ```
 
-##### Ext-Core [⥣](#table-of-contents)
+##### Ext-Core 
 * Ext
     > Ext is a global singleton object that encapsulates all classes, singletons, and utility methods in the Sencha library.
 * Ext - application
@@ -323,7 +323,7 @@ method returns a promise to supply the value at some point in the future (Mozill
         Ext.define('ElectricCar', {
             extend: 'Car',
             start: function(){
-                alert("Electric car started);
+                alert("Electric car started");
             }
         });
     ```
@@ -446,7 +446,7 @@ method returns a promise to supply the value at some point in the future (Mozill
     > to remove the listeners, you need the reference to the function, you cannot use anonymous funciton.
     ```js
         var HandClick = funciton(){
-            Ext.Msg.alert('My button clicked!);
+            Ext.Msg.alert('My button clicked!");
         }
 
         Ext.create('Ext.Button', {
@@ -635,18 +635,21 @@ method returns a promise to supply the value at some point in the future (Mozill
         * JSONP(JSON WITH PADDING): This is useful when you need to send a request to another domain. Ajax can be used only to send requests to the same domain
         * REST 
 
-## Java [⥣](#table-of-contents)
+[⥣](#table-of-contents)
+## Java 
 
-#### Java-JDBC [⥣](#table-of-contents)
+[⥣](#table-of-contents)
+#### Java-JDBC 
 * the process to implement the JDBC
 >load the driver >> make connection >> get statement object >> execute the query >> close the connection
    
 
-#### Java-Hibernate [⥣](#table-of-contents)
+#### Java-Hibernate 
 * the process to implement the sessionFactory
 > sessionFactory.openSession() >> session.BeginTransaction() >> session.createQuery() >> session.getTransaction.commit() >> close()
 
-#### Java-DesignPattern [⥣](#table-of-contents)
+#### Java-DesignPattern 
+[⥣](#table-of-contents)
 * Singleton
     1. used to eliminate the option of instantiating more than one object
     2. pros >> lazy initialization
@@ -666,7 +669,8 @@ method returns a promise to supply the value at some point in the future (Mozill
             }
         }
 ```
-#### Java-Thread [⥣](#table-of-contents)
+#### Java-Thread 
+[⥣](#table-of-contents)
 * Thread hints
     1. join function is used to execute thread in squence (InterruptedException)
     2. lock >> separate lock for reading&writting
