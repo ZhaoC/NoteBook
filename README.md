@@ -11,6 +11,7 @@ ______
 - [JavaScript](#javascript)
     - [Event Handler](#javascript-eventhandler)
     - [Promise](#javascript-promise)
+    - [Subscribe/Publish](#javascript-observer)
     - [JavaScript Concerns](#javascript-concerns)
     - [ExtJS Framework](#javascript-extjs)
 - [Java](#java)
@@ -62,6 +63,7 @@ ______
 ##### Heroku Reference
 * [heroku-postgresql](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-the-add-on)
 
+[⥣](#table-of-contents)
 ## Python 
     ```sh
         #install pip
@@ -85,6 +87,7 @@ ______
 * Flask Project Workflow
     > `Bowser` --> `routes.py` --> `templates/` --> `static/` --> `routes.py` --> `Browser`
 
+[⥣](#table-of-contents)
 ## JavaScript 
 #### Javascript-EventHandler 
 ```js
@@ -118,7 +121,7 @@ document.getElement().addEventListener('click', function, false);
         myRequest.open('GET', 'file.txt', true);
         myRequest.send(null);
 ```
-[⥣](#table-of-contents)
+
 #### Javascript-Promise 
 > JavaScript Promises provide a mechanism for traking the state of an asynchronous task with more robustness and less chaos. 
 
@@ -176,10 +179,27 @@ method returns a promise to supply the value at some point in the future (Mozill
 * [An implementation of Promise (github lib)](https://github.com/then/promise)
 * [An implementation of Promise - Lightweight (github lib)](https://github.com/stackp/promisejs)
 
+#### Javascript-Observer
+> The observer is a design pattern in which an object maintains a list of objects depending on it (observers), automatically notifying 
+them of any changes to state. Sub/pub use strings to identify the event type. There is no relationship between the message and the 
+target of the event. Objects are decoupled. 
+> The largest benifitof uing pub/sub is the ability to break down our application into smaller, more 
+loosely coupled modules. Also check [Loose coupling](https://en.wikipedia.org/wiki/Loose_coupling) for more info.
+
+Code Sample:
+```js
+    globalBroadcaster.subscribe('uniqueEventName', handler);
+    globalBroadcaster.publish('uniqueEventName', parameter1, parameter2,.);
+    globalBroadcaster.unsubscribe('uniqueEventName', handler);
+```
+`Reference`: [Observer Design Pattern Reference](https://msdn.microsoft.com/en-us/magazine/hh201955.aspx)
+
+
 #### JavaScript-Concerns 
 1. why JavaScript is not multi-threading >> because the Javascript interpreter in the browser is a single thread.
 2. What is callbakc hell and how to avoid it >> [Callback hell](http://callbackhell.com/)
 
+[⥣](#table-of-contents)
 #### JavaScript-ExtJS 
 * Code Conventions
     * Code Snippet 
@@ -446,7 +466,7 @@ method returns a promise to supply the value at some point in the future (Mozill
     > to remove the listeners, you need the reference to the function, you cannot use anonymous funciton.
     ```js
         var HandClick = funciton(){
-            Ext.Msg.alert('My button clicked!");
+            Ext.Msg.alert('My button clicked!');
         }
 
         Ext.create('Ext.Button', {
@@ -638,7 +658,6 @@ method returns a promise to supply the value at some point in the future (Mozill
 [⥣](#table-of-contents)
 ## Java 
 
-[⥣](#table-of-contents)
 #### Java-JDBC 
 * the process to implement the JDBC
 >load the driver >> make connection >> get statement object >> execute the query >> close the connection
@@ -649,7 +668,6 @@ method returns a promise to supply the value at some point in the future (Mozill
 > sessionFactory.openSession() >> session.BeginTransaction() >> session.createQuery() >> session.getTransaction.commit() >> close()
 
 #### Java-DesignPattern 
-[⥣](#table-of-contents)
 * Singleton
     1. used to eliminate the option of instantiating more than one object
     2. pros >> lazy initialization
@@ -670,7 +688,6 @@ method returns a promise to supply the value at some point in the future (Mozill
         }
 ```
 #### Java-Thread 
-[⥣](#table-of-contents)
 * Thread hints
     1. join function is used to execute thread in squence (InterruptedException)
     2. lock >> separate lock for reading&writting
