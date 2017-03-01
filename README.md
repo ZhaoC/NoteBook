@@ -30,16 +30,18 @@ ______
 
 
 #### Tools-Jenkins 
-    ```sh
-        #Run in standalone mode
-        $ java -jar jenkins.war --httpPort=9090 //default port is 8080
-    ```
+
+```sh
+    #Run in standalone mode
+    $ java -jar jenkins.war --httpPort=9090 //default port is 8080
+```
 
 #### Tools-CURL 
-    ```sh
-        #retrieve content from internet and save to a file
-        $ curl -o ubuntu.iso http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
-    ```
+
+```sh
+    #retrieve content from internet and save to a file
+    $ curl -o ubuntu.iso http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
+```
 
 ##### CURL reference 
 * [comparison Table](https://curl.haxx.se/docs/comparison-table.html)
@@ -47,28 +49,29 @@ ______
 
 ##### Tools-Heroku 
 * command cheetsheet
-    ```sh
-        $: heroku create
-        $: git push heroku master
-        
-        # set up psql
-        $: heroku addons:create heroku-postgresql:hobby-dev
-        $: heroku config -s | grep HEROKU_POSTGRESQL
+```sh
+    $: heroku create
+    $: git push heroku master
+    
+    # set up psql
+    $: heroku addons:create heroku-postgresql:hobby-dev
+    $: heroku config -s | grep HEROKU_POSTGRESQL
 
-        # commonly used command
-        $: heroku logs
-        $: heroku pg:info
-        $: heroku pg:psql
-    ```
+    # commonly used command
+    $: heroku logs
+    $: heroku pg:info
+    $: heroku pg:psql
+```
 ##### Heroku Reference
 * [heroku-postgresql](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-the-add-on)
 
 [⥣](#table-of-contents)
 ## Python 
-    ```sh
-        #install pip
-        $ sudo easy_install pip
-    ```    
+
+```sh
+    #install pip
+    $ sudo easy_install pip
+```    
 
 #### PythonRelatedMaterials
 * [Python Quickstart](https://pip.pypa.io/en/stable/quickstart/)
@@ -149,25 +152,26 @@ method returns a promise to supply the value at some point in the future (Mozill
     * Promise.prototype >> Represents the prototype for the Promise constructor.
 
 * how you create a promise
-    ```js
-        var promise  = new Promise(function(resolve, reject){
-            // do a thing, possibly async, then...
-            if(/*everything turned out fine*/){
-                resolve("stuff worked!");
-            }
-            else{
-                reject(Error("it broke"));
-            }
-        })
-    ```
+```js
+    var promise  = new Promise(function(resolve, reject){
+        // do a thing, possibly async, then...
+        if(/*everything turned out fine*/){
+            resolve("stuff worked!");
+        }
+        else{
+            reject(Error("it broke"));
+        }
+    })
+```
 * how you use the promise
-    ```js
-        promise.then(function(result){
-            console.log(result); // "Stuff worked!"
-        }, function(err){
-            console.log(err); //Error: "It broke"
-        });
-    ```
+```js
+    promise.then(function(result){
+        console.log(result); // "Stuff worked!"
+    }, function(err){
+        console.log(err); //Error: "It broke"
+    });
+```
+
 > then() takes two arguments,  callback for a success case, and another for the failure case. Both are optional, so you can add a callback for the success or failure case only.
 
 ##### JavaScript promise reference
@@ -203,6 +207,7 @@ Code Sample:
 #### JavaScript-ExtJS 
 * Code Conventions
     * Code Snippet 
+
         ```js 
             Ext.define('MyApp.model.Population', {
                 extend: 'Ext.data.Model',
@@ -210,6 +215,7 @@ Code Sample:
             });
         ```
     * Command line input/output exmaple
+
         ```sh
             sencha generate app --ext MyApp ./MyApp
         ```
@@ -219,6 +225,7 @@ Code Sample:
         * Two-way binding
         * Client-side routing (used in Single-Page Application)
     * Application setup
+
         ```sh
             sencha -sdk /path/to/sdk generate app MyApp /path/to/myapp 
             cd sample
@@ -270,34 +277,38 @@ Code Sample:
             });
         ```
     * Controller - MainController.js
-        ```js
-            // you can see that onIte,Selected function is defined, this will be called when an ittem is 
-            // seleceted from the grid in the view
-            Ext.define('MyApp.view.main.MainController', {
-                extend: 'Ext.app.ViewModel',
-                alias : 'controller.main',
-                onItemSelected: function(sender, record){
-                    Ext.Msg.confirm('Confirm', "Are you sure?', 'onConfirm', this);
-                },
-                onConfirm: function (choice){
-                    if (choice === 'yes'){
-                        //
-                    }
+
+    ```js
+        // you can see that onIte,Selected function is defined, this will be called when an ittem is 
+        // seleceted from the grid in the view
+        Ext.define('MyApp.view.main.MainController', {
+            extend: 'Ext.app.ViewModel',
+            alias : 'controller.main',
+            onItemSelected: function(sender, record){
+                Ext.Msg.confirm('Confirm', "Are you sure?', 'onConfirm', this);
+            },
+            onConfirm: function (choice){
+                if (choice === 'yes'){
+                    //
                 }
-            });
-        ```
+            }
+        });
+    ```
 * Sencha Cmd
     * Cmd - build the application
+
         ```sh
             # this will build HTML, JS ,SASS and so on, read app.json for build config
             sencha app build
         ```
     * Cmd - launch the application
+
         ```sh
             # 'watch' can be used to rebuild and launch the application, it can also monitor any code changes made
             sencha app watch
         ```
     * Cmd - code generation
+    
         ```sh
             # using sencha cmd, you can generate the ExtJS code, such as views, controllers
             sencha generate view myApp.MyView
