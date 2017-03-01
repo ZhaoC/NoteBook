@@ -31,16 +31,16 @@ ______
 
 #### Tools-Jenkins 
 
-```sh
-    #Run in standalone mode
-    $ java -jar jenkins.war --httpPort=9090 //default port is 8080
+```js
+    //Run in standalone mode
+    java -jar jenkins.war --httpPort=9090 //default port is 8080
 ```
 
 #### Tools-CURL 
 
-```sh
-    #retrieve content from internet and save to a file
-    $ curl -o ubuntu.iso http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
+```js
+    //retrieve content from internet and save to a file
+    curl -o ubuntu.iso http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso
 ```
 
 ##### CURL reference 
@@ -49,7 +49,7 @@ ______
 
 ##### Tools-Heroku 
 * command cheetsheet
-```sh
+```js
     $: heroku create
     $: git push heroku master
     
@@ -68,7 +68,7 @@ ______
 [⥣](#table-of-contents)
 ## Python 
 
-```sh
+```js
     #install pip
     $ sudo easy_install pip
 ```    
@@ -80,13 +80,13 @@ ______
 
 #### Python-Flask 
 * init a Flask Project 
-    ```sh
-        # install Flask
-            $: mkdir FlaskAppDir
-            $: virtualenv venv #create virtual environment
-            $: source venv/bin/activate # activate venv
-            $: pip install Flask # install Flask in the venv
-    ```
+```sh
+    # install Flask
+        $: mkdir FlaskAppDir
+        $: virtualenv venv #create virtual environment
+        $: source venv/bin/activate # activate venv
+        $: pip install Flask # install Flask in the venv
+```
 * Flask Project Workflow
     > `Bowser` --> `routes.py` --> `templates/` --> `static/` --> `routes.py` --> `Browser`
 
@@ -133,9 +133,9 @@ success value or failure reason. This lets asynchronous methods return values li
 method returns a promise to supply the value at some point in the future (Mozilla Foundation)
 
 * Promise Syntax
-    ```js
-        new Promise(/* executor */ function(resolve, reject){...});
-    ```
+```js
+    new Promise(/* executor */ function(resolve, reject){...});
+```
 *  Promise states :
     * fulfilled - the action relating to the promise successed
     * rejected - the action relating to the promise failed
@@ -163,7 +163,9 @@ method returns a promise to supply the value at some point in the future (Mozill
         }
     })
 ```
+
 * how you use the promise
+
 ```js
     promise.then(function(result){
         console.log(result); // "Stuff worked!"
@@ -207,18 +209,17 @@ Code Sample:
 #### JavaScript-ExtJS 
 * Code Conventions
     * Code Snippet 
-
-        ```js 
-            Ext.define('MyApp.model.Population', {
-                extend: 'Ext.data.Model',
-                fields: ['year', 'population']
-            });
-        ```
+```js 
+    Ext.define('MyApp.model.Population', {
+        extend: 'Ext.data.Model',
+        fields: ['year', 'population']
+    });
+```
     * Command line input/output exmaple
 
-        ```sh
-            sencha generate app --ext MyApp ./MyApp
-        ```
+```js
+    sencha generate app --ext MyApp ./MyApp
+```
     * ExtJS Features
         * Cross-broswer support
         * Rich UI Components
@@ -226,11 +227,11 @@ Code Sample:
         * Client-side routing (used in Single-Page Application)
     * Application setup
 
-        ```sh
-            sencha -sdk /path/to/sdk generate app MyApp /path/to/myapp 
-            cd sample
-            sencha app watch
-        ```
+```js
+    sencha -sdk /path/to/sdk generate app MyApp /path/to/myapp 
+    cd sample
+    sencha app watch
+```
     * Application Stytle
         * SASS (Syntactically Awesome Stylesheets) is a Stylesheet language which is heavily used in ExtJS
     
